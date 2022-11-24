@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <locale.h>
 
-//Entrada: InicializaÁ„o das vari·veis, do tabuleiro e das funÁıes
+//Entrada: Inicializa√ß√£o das vari√°veis, do tabuleiro e das fun√ß√µes
 char board[3][3];
 const char PLAYER1 = 'X';
 const char PLAYER2 = 'O';
@@ -20,7 +20,7 @@ void printWinner(char);
 int main()
 {   
 
-//Processamento: O tabuleiro È resetado, os participantes jogam atÈ houver um vencedor, e ai o ganhador aparece na tela
+//Processamento: O tabuleiro √© resetado, os participantes jogam at√© houver um vencedor, e ai o ganhador aparece na tela
 
 	setlocale(LC_ALL, "Portuguese");
 	char winner = ' ';
@@ -29,7 +29,7 @@ int main()
 	
 	
 	printf("BEM-VINDO!\n");
-	printf("QUANTOS JOGADORES IR√O PARTICIPAR?? (1/2): ");
+	printf("QUANTOS JOGADORES IR√ÉO PARTICIPAR?? (1/2): ");
 	scanf("%d", &players);
    do
    {
@@ -78,7 +78,7 @@ int main()
       	scanf("%c", &response);
     	response = toupper(response);
     	if(response == 'Y'){
-    	printf("QUANTOS JOGADORES IR√O PARTICIPAR? (1/2): ");
+    	printf("QUANTOS JOGADORES IR√ÉO PARTICIPAR? (1/2): ");
     	scanf("%d", &players);
     	}
    } while (response == 'Y');
@@ -87,7 +87,7 @@ int main()
 
    return 0;
 }
-//FunÁ„o que resetar· o tabuleiro assim que chamado.
+//Fun√ß√£o que resetar√° o tabuleiro assim que chamado.
 void resetBoard()
 {
 for(int i = 0; i < 3; i++){
@@ -97,7 +97,7 @@ for(int i = 0; i < 3; i++){
       }
    }
 }
-//FunÁ„o para estilizado o tabuleiro do jogo
+//Fun√ß√£o para estilizar o tabuleiro do jogo
 void printBoard()
 {
    printf(" %c | %c | %c ", board[0][0], board[0][1], board[0][2]);
@@ -107,7 +107,7 @@ void printBoard()
    printf(" %c | %c | %c ", board[2][0], board[2][1], board[2][2]);
    printf("\n");
 }
-//funÁ„o para chegar se h· espaÁos vazios.
+//fun√ß√£o para checar se h√° espa√ßos vazios.
 int checkFreeSpaces()
 {
    int freeSpaces = 9;
@@ -124,7 +124,7 @@ int checkFreeSpaces()
    }
    return freeSpaces;
 }
-//FunÁ„o com os movimentos do jogador 1.
+//Fun√ß√£o com os movimentos do jogador 1.
 void player1Move()
 {
    int x;
@@ -141,7 +141,7 @@ void player1Move()
 
       if(board[x][y] != ' ')
       {
-         printf("Movimento inv·lido!\n");
+         printf("Movimento inv√°lido!\n");
       }
       else
       {
@@ -151,7 +151,7 @@ void player1Move()
    } while (board[x][y] != ' ');
    
 }
-//FunÁ„o que torna possÌvel o multijogador e os movimentos do player 2.
+//Fun√ß√£o que torna poss√≠vel o multijogador e os movimentos do player 2.
 void player2Move() 
 {
    int x;
@@ -168,7 +168,7 @@ void player2Move()
 
       if(board[x][y] != ' ')
       {
-         printf("Movimento inv·lido!\n");
+         printf("Movimento inv√°lido!\n");
       }
       else
       {
@@ -179,7 +179,7 @@ void player2Move()
    
 }
 
-//FunÁ„o que realiza os movimentos do advers·rio (o computador)
+//Fun√ß√£o que realiza os movimentos do advers√°rio (o computador)
 void computerMove()
 {
    srand(time(0));
@@ -201,7 +201,7 @@ void computerMove()
       printWinner(' ');
    }
 }
-//FunÁ„o que ir· conferir o vencedor.
+//Fun√ß√£o que ir√° conferir o vencedor.
 char checkWinner()
 {
    //check rows
@@ -232,7 +232,7 @@ char checkWinner()
 
    return ' ';
 }
-//saÌda: mostrar quem ganhou a partida
+//sa√≠da: mostrar quem ganhou a partida
 void printWinner(char winner)
 {
    if(winner == PLAYER1)
